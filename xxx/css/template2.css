@@ -1,0 +1,82 @@
+body {
+	margin: 0;	
+	font-family: calibri, arial;
+}
+
+#content {
+	margin: 0 auto;
+	width: 1250px;
+	height: 100%;
+	border-left: 6px solid #000;
+	border-right: 6px solid #000;
+}
+
+#header { 
+	width: 100%;
+	height: 375px;
+	background-image: url(../img/Diag.png);
+	background-size: 100% 375px;
+	background-repeat: no-repeat;
+}
+
+#banner {
+	margin: 0 40px;
+	width: auto;
+	height: 400px;
+	background-image: url(../img/Be_Victorious_Elise_Small.png);
+	background-size: 388px 325px;
+	background-repeat: no-repeat;
+}
+
+#leagueBanner {
+	margin: 30px;
+	margin-right: 60px;
+	float: right;
+	
+}
+
+#champTable  {
+	width: 1036px;
+	height: auto;
+	margin: 18px auto;
+	padding: 12px;
+	text-align: middle;
+	background: #FFF;
+}
+#champTable td {
+	width: 10%;
+}
+#champTable select {
+	width: 100%;
+	padding: 4px;
+	border-radius: 2px;
+}
+#submitButton {
+	width: 200px;
+	height: 50px;
+	border-radius: 8px;
+	font-size: 18px;
+	background-color: #dbc44c;
+	color: #222;
+}
+
+#result {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1060px;
+	height: 300px;
+}
+
+#footer {
+	margin: 0 auto;
+	padding: 12px 0px;
+	width: 100%;
+	height: 40px;
+	background-color: #000;
+	border-top: 6px double #FFF;
+	text-align: center;
+	font-size: 32px;
+	color: #FFF;
+
+}
