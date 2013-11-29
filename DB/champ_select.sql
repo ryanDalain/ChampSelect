@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2013 at 05:25 AM
+-- Generation Time: Nov 29, 2013 at 10:30 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -721,6 +721,52 @@ CREATE TABLE IF NOT EXISTS `www` (
   PRIMARY KEY (`Champ1`,`Champ2`),
   KEY `Champ2` (`Champ2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `www`
+--
+
+INSERT INTO `www` (`Champ1`, `Champ2`) VALUES
+('Rumble', 'Anivia'),
+('Zac', 'Anivia'),
+('Malphite', 'Annie'),
+('Zyra', 'Ashe'),
+('Lux', 'Blitzcrank'),
+('Vayne', 'Blitzcrank'),
+('Jarvan IV', 'Cho''Gath'),
+('Shen', 'Evelynn'),
+('Cho''Gath', 'Jarvan IV'),
+('Kayle', 'Jarvan IV'),
+('Miss Fortune', 'Jarvan IV'),
+('Jarvan IV', 'Kayle'),
+('Soraka', 'Lucian'),
+('Singed', 'Lulu'),
+('Blitzcrank', 'Lux'),
+('Annie', 'Malphite'),
+('Orianna', 'Malphite'),
+('Jarvan IV', 'Miss Fortune'),
+('Amumu', 'Morgana'),
+('Renekton', 'Nasus'),
+('Shen', 'Nocturne'),
+('Malphite', 'Orianna'),
+('Zac', 'Orianna'),
+('Nasus', 'Renekton'),
+('Anivia', 'Rumble'),
+('Evelynn', 'Shen'),
+('Nocturne', 'Shen'),
+('Lulu', 'Singed'),
+('Volibear', 'Singed'),
+('Zilean', 'Singed'),
+('Taric', 'Sivir'),
+('Lucian', 'Soraka'),
+('Sivir', 'Taric'),
+('Lee Sin', 'Teemo'),
+('Blitzcrank', 'Vayne'),
+('Singed', 'Volibear'),
+('Anivia', 'Zac'),
+('Orianna', 'Zac'),
+('Singed', 'Zilean'),
+('Ashe', 'Zyra');
 
 --
 -- Constraints for dumped tables
