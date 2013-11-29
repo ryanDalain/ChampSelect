@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2013 at 02:56 AM
+-- Generation Time: Nov 29, 2013 at 05:25 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -31,7 +31,8 @@ USE `champ select`;
 CREATE TABLE IF NOT EXISTS `champion` (
   `Name` varchar(255) NOT NULL,
   `Difficulty` int(11) NOT NULL,
-  `Win_Rate` double NOT NULL
+  `Win_Rate` double NOT NULL,
+  PRIMARY KEY (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -55,7 +56,7 @@ INSERT INTO `champion` (`Name`, `Difficulty`, `Win_Rate`) VALUES
 ('Corki', 7, 52.65),
 ('Darius', 4, 50.86),
 ('Diana', 4, 47.41),
-('Dr. Mundo', 4, 46.29),
+('Dr.Mundo', 4, 46.29),
 ('Draven', 10, 50.39),
 ('Elise', 8, 45.57),
 ('Evelynn', 8, 48.98),
@@ -363,7 +364,8 @@ CREATE TABLE IF NOT EXISTS `position` (
   `Position_Name` varchar(255) NOT NULL,
   `Champ_Name` varchar(255) NOT NULL,
   `isPrimary` tinyint(1) NOT NULL,
-  PRIMARY KEY (`Position_Name`,`Champ_Name`)
+  PRIMARY KEY (`Position_Name`,`Champ_Name`),
+  KEY `Champ_Name` (`Champ_Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -475,17 +477,17 @@ INSERT INTO `position` (`Position_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Middle', 'Talon', 1),
 ('Middle', 'Tristana', 0),
 ('Middle', 'Twisted Fate', 1),
-('Middle', 'Valdimir', 0),
 ('Middle', 'Veigar', 1),
 ('Middle', 'Viktor', 1),
+('Middle', 'Vladimir', 0),
 ('Middle', 'Xerath', 1),
 ('Middle', 'Zed', 0),
 ('Middle', 'Ziggs', 1),
-('Middle', 'Zileam', 0),
+('Middle', 'Zilean', 0),
 ('Middle', 'Zyra', 1),
 ('Top', 'Aatrox', 1),
 ('Top', 'Akali', 1),
-('Top', 'ChoGath', 0),
+('Top', 'Cho''Gath', 0),
 ('Top', 'Corki', 0),
 ('Top', 'Darius', 1),
 ('Top', 'Dr.Mundo', 0),
@@ -499,7 +501,7 @@ INSERT INTO `position` (`Position_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Top', 'Jayce', 1),
 ('Top', 'Kayle', 1),
 ('Top', 'Kennen', 1),
-('Top', 'KhaZix', 0),
+('Top', 'Kha''Zix', 0),
 ('Top', 'Lee Sin', 0),
 ('Top', 'Malphite', 1),
 ('Top', 'Master Yi', 0),
@@ -541,7 +543,8 @@ CREATE TABLE IF NOT EXISTS `role` (
   `Role_Name` varchar(255) NOT NULL,
   `Champ_Name` varchar(255) NOT NULL,
   `isPrimary` tinyint(1) NOT NULL,
-  PRIMARY KEY (`Role_Name`,`Champ_Name`)
+  PRIMARY KEY (`Role_Name`,`Champ_Name`),
+  KEY `Champ_Name` (`Champ_Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -555,7 +558,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Assassin', 'Fizz', 1),
 ('Assassin', 'Kassadin', 1),
 ('Assassin', 'Katarina', 1),
-('Assassin', 'KhaZix', 1),
+('Assassin', 'Kha''Zix', 1),
 ('Assassin', 'LeBlanc', 1),
 ('Assassin', 'Master Yi', 1),
 ('Assassin', 'Nidalee', 1),
@@ -604,7 +607,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Fighter', 'Vladimir', 0),
 ('Fighter', 'Volibear', 1),
 ('Fighter', 'Warwick', 1),
-('Fighter', 'Wu Kong', 1),
+('Fighter', 'WuKong', 1),
 ('Fighter', 'Xin Zhao', 1),
 ('Fighter', 'Yorick', 1),
 ('Fighter', 'Zac', 0),
@@ -613,7 +616,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Mage', 'Annie', 1),
 ('Mage', 'Brand', 1),
 ('Mage', 'Cassiopeia', 1),
-('Mage', 'ChoGath', 0),
+('Mage', 'Cho''Gath', 0),
 ('Mage', 'Corki', 0),
 ('Mage', 'Elise', 1),
 ('Mage', 'Ezreal', 0),
@@ -640,7 +643,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Mage', 'Swain', 1),
 ('Mage', 'Syndra', 1),
 ('Mage', 'Twisted Fate', 1),
-('Mage', 'Veiger', 1),
+('Mage', 'Veigar', 1),
 ('Mage', 'Viktor', 1),
 ('Mage', 'Vladimir', 1),
 ('Mage', 'Xerath', 1),
@@ -655,7 +658,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Marksman', 'Graves', 1),
 ('Marksman', 'Jinx', 1),
 ('Marksman', 'Kayle', 0),
-('Marksman', 'KogMaw', 1),
+('Marksman', 'Kog''Maw', 1),
 ('Marksman', 'Lucian', 1),
 ('Marksman', 'Miss Fortune', 1),
 ('Marksman', 'Quinn', 1),
@@ -687,7 +690,7 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Tank', 'Alistar', 1),
 ('Tank', 'Amumu', 1),
 ('Tank', 'Blitzcrank', 1),
-('Tank', 'ChoGath', 1),
+('Tank', 'Cho''Gath', 1),
 ('Tank', 'Dr.Mundo', 0),
 ('Tank', 'Galio', 1),
 ('Tank', 'Hecarim', 0),
@@ -705,6 +708,42 @@ INSERT INTO `role` (`Role_Name`, `Champ_Name`, `isPrimary`) VALUES
 ('Tank', 'Singed', 1),
 ('Tank', 'Volibear', 0),
 ('Tank', 'Zac', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `www`
+--
+
+CREATE TABLE IF NOT EXISTS `www` (
+  `Champ1` varchar(255) NOT NULL,
+  `Champ2` varchar(255) NOT NULL,
+  PRIMARY KEY (`Champ1`,`Champ2`),
+  KEY `Champ2` (`Champ2`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `position`
+--
+ALTER TABLE `position`
+  ADD CONSTRAINT `position_ibfk_1` FOREIGN KEY (`Champ_Name`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `role`
+--
+ALTER TABLE `role`
+  ADD CONSTRAINT `role_ibfk_1` FOREIGN KEY (`Champ_Name`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `www`
+--
+ALTER TABLE `www`
+  ADD CONSTRAINT `www_ibfk_2` FOREIGN KEY (`Champ2`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `www_ibfk_1` FOREIGN KEY (`Champ1`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
