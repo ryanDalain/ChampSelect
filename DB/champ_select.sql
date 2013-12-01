@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2013 at 10:30 PM
+-- Generation Time: Dec 01, 2013 at 05:02 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -167,7 +167,9 @@ CREATE TABLE IF NOT EXISTS `crowd_control` (
   `Ability_Name` varchar(255) NOT NULL,
   `Champ_Name` varchar(255) NOT NULL,
   `Type` varchar(255) NOT NULL,
-  PRIMARY KEY (`Ability_Name`)
+  PRIMARY KEY (`Ability_Name`),
+  KEY `Champ_Name` (`Champ_Name`),
+  KEY `Champ_Name_2` (`Champ_Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -194,7 +196,7 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Broken Wings', 'Riven', 'Hard'),
 ('Call of the Void', 'Malzahar', 'Soft'),
 ('Cannon Barrage', 'Gangplank', 'Soft'),
-('Cataclysm', 'Jarven IV', 'Terrain'),
+('Cataclysm', 'Jarvan IV', 'Terrain'),
 ('CH-1 Electron Storm Grenade', 'Heimerdinger', 'Hard'),
 ('Chain of Corruption', 'Varus', 'Hard'),
 ('Chaos Storm', 'Viktor', 'Soft'),
@@ -225,7 +227,7 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Decrepify', 'Swain', 'Soft'),
 ('Depth Charge', 'Nautilus', 'Hard'),
 ('Devastating Charge', 'Hecarim', 'Hard'),
-('Dragon Strike', 'Jarven IV', 'Hard'),
+('Dragon Strike', 'Jarvan IV', 'Hard'),
 ('Dragon''s Descent', 'Shyvana', 'Hard'),
 ('Dragon''s Rage', 'Lee Sin', 'Hard'),
 ('Dredge Line', 'Nautilus', 'Hard'),
@@ -236,7 +238,7 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Ethereal Chains', 'Leblanc', 'Hard'),
 ('Event Horizon', 'Veigar', 'Hard'),
 ('Explosive Cask', 'Gragas', 'Hard'),
-('Feral Scream', 'Cho Gath', 'Soft'),
+('Feral Scream', 'Cho''Gath', 'Soft'),
 ('Flame Chompers!', 'Jinx', 'Hard'),
 ('Flash Frost', 'Anivia', 'Hard'),
 ('Flay', 'Thresh', 'Hard'),
@@ -266,6 +268,7 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Impale', 'Skarner', 'Hard'),
 ('Infected Cleaver', 'Dr.Mundo', 'Soft'),
 ('Infinite Duress', 'Warwick', 'Hard'),
+('Infuse', 'Soraka', 'Soft'),
 ('Inner Flame', 'Karma', 'Soft'),
 ('Jack in the Box', 'Shaco', 'Hard'),
 ('Ki Burst', 'Riven', 'Hard'),
@@ -274,7 +277,7 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Lucent Singularity', 'Lux', 'Soft'),
 ('Mage Chains', 'Xerath', 'Hard'),
 ('Make it Rain', 'Miss Fortune', 'Soft'),
-('Mark of Storm', 'Kennon', 'Hard'),
+('Mark of Storm', 'Kennen', 'Hard'),
 ('Mega Adhesive', 'Singed', 'Soft'),
 ('Miasma', 'Cassiopeia', 'Soft'),
 ('Mocking Shout', 'Tryndamere', 'Soft'),
@@ -305,7 +308,8 @@ INSERT INTO `crowd_control` (`Ability_Name`, `Champ_Name`, `Type`) VALUES
 ('Rocketjump', 'Tristana', 'Soft'),
 ('Rolling Thunder', 'Volibear', 'Hard'),
 ('Rune Prison', 'Ryze', 'Hard'),
-('Rupture', 'Cho Gath', 'Hard'),
+('Rupture', 'Cho''Gath', 'Hard'),
+('Ruthless Predator', 'Renekton', 'Hard'),
 ('Sanguine Pool', 'Vladimir', 'Soft'),
 ('Satchel Charge', 'Ziggs', 'Hard'),
 ('Scatter the Weak', 'Syndra', 'Hard'),
@@ -773,6 +777,12 @@ INSERT INTO `www` (`Champ1`, `Champ2`) VALUES
 --
 
 --
+-- Constraints for table `crowd_control`
+--
+ALTER TABLE `crowd_control`
+  ADD CONSTRAINT `crowd_control_ibfk_1` FOREIGN KEY (`Champ_Name`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `position`
 --
 ALTER TABLE `position`
@@ -788,8 +798,8 @@ ALTER TABLE `role`
 -- Constraints for table `www`
 --
 ALTER TABLE `www`
-  ADD CONSTRAINT `www_ibfk_2` FOREIGN KEY (`Champ2`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `www_ibfk_1` FOREIGN KEY (`Champ1`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `www_ibfk_1` FOREIGN KEY (`Champ1`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `www_ibfk_2` FOREIGN KEY (`Champ2`) REFERENCES `champion` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

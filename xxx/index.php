@@ -817,9 +817,9 @@ Select Champion by:
 				Work well with my team <br>
 			</td>
 			<td>
-				<input type="checkbox" name="check_list[]" value="value 1"> <br>
-				<input type="checkbox" name="check_list[]" value="value 1"> <br>
-				<input type="checkbox" name="check_list[]" value="value 1"> <br>
+				<input type="checkbox" name="check_list[]" value="CC"> <br>
+				<input type="checkbox" name="check_list[]" value="Difficulty"> <br>
+				<input type="checkbox" name="check_list[]" value="WWW"> <br>
 			</td>
 		</tr>
 		<tr><!--Row 4-->
