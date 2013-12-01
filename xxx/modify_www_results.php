@@ -41,7 +41,10 @@
 			break;
 	
 	}
-	
+
+	echo $modify_query . "<br>";
 	$query_data = mysql_query($modify_query) or die("Could not modify pair<br>");
 	
 ?>
+
+<br> <br> <a href="backend.php">Backend page</a> <br> <br>

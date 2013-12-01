@@ -67,6 +67,7 @@ Note: invalid numbers will be set to 0 in the DB <br>
 <input type="submit" name="modify" value="Modify champion stats"> <br>
 </form>
 
+<br> <br> <a href="backend.php">Backend page</a> <br> <br>
 
 </body>
 </html>

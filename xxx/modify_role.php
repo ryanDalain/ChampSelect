@@ -75,6 +75,7 @@ Note: 1 for yes, 0 for no <br>
 <input type="submit" name="modify" value="Modify role"> <br>
 </form>
 
+<br> <br> <a href="backend.php">Backend page</a> <br> <br>
 
 </body>
 </html>

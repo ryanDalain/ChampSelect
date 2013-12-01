@@ -52,3 +52,5 @@
 	$query_data = mysql_query($modify_query) or die("Could not modify champion<br>");
 	
 ?>
+
+<br> <br> <a href="backend.php">Backend page</a> <br> <br>

@@ -127,6 +127,8 @@
 <input type="submit" name="modify" value="Modify pair"> <br>
 </form>
 
+<br> <br> <a href="backend.php">Backend page</a> <br> <br>
 
 </body>
 </html>
+
