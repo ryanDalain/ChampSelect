@@ -150,25 +150,7 @@
 	</table>
 </form>
 
-<table>
-	<tr>
-		<td>
-			<h3>Details</h3>
-		</td>
-		<td>
-			<h3>Results</h3>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<iframe width="500" height="200" name="detailsFrame" frameborder="1"></iframe>
-		</td>
-		<td>
-			<iframe width="500" height="200" name="resultsFrame" frameborder="1"></iframe>
-		</td>
-	</tr>
-</table>
-
+<iframe width="400" height="400" name="resultsFrame" frameborder="0"></iframe>
 
 </body>
 </html>
