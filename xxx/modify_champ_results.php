@@ -11,7 +11,7 @@
 	
 	switch($_POST["modify"])
 	{
-		case "Add new champion":
+		case "Add champion":
 			// copy fields into local variables
 			$name = $_POST["name"];
 			$difficulty = $_POST["difficulty"];
@@ -48,5 +48,7 @@
 	
 	}
 	
+	echo $modify_query . "<br>";
 	$query_data = mysql_query($modify_query) or die("Could not modify champion<br>");
+	
 ?>

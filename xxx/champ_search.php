@@ -90,15 +90,13 @@
 	$arr_champions = array($_POST["champ_dropdown_1"],
 				 $_POST["champ_dropdown_2"],
 				 $_POST["champ_dropdown_3"],
-				 $_POST["champ_dropdown_4"],
-				 $_POST["champ_dropdown_5"]);
+				 $_POST["champ_dropdown_4"]);
 
 	// positions	
 	$arr_positions = array($_POST["position_dropdown_1"],
 				 $_POST["position_dropdown_2"],
 				 $_POST["position_dropdown_3"],
-				 $_POST["position_dropdown_4"],
-				 $_POST["position_dropdown_5"]);
+				 $_POST["position_dropdown_4"]);
 
 	// Array of booleans holds which positions have been fulfilled
 	// (1) Used for determining which positions are open

@@ -16,19 +16,21 @@
 		
 		
 		$queryOriginal = "SELECT Name FROM champion";
+		$queryPositions = "SELECT DISTINCT(Position_Name) FROM position";
 		
 		$query_data = mysql_query($queryOriginal) or die("Could not find Champion table");
+		$query_data2 = mysql_query($queryPositions) or die("Could not find Position table");
         
         ?>
 
 <br>
 
-<form action="modify_champ_results.php" method="post">
+<form action="modify_position_results.php" method="post">
 
 <table>
 	<tr>
 		<td>
-			New Champ name:
+			Select Position from list:
 		</td>
 		<td>
 			Select Champ from list:
@@ -36,7 +38,16 @@
 	</tr>
 	<tr>
 		<td>
-			<input type="text" name="name"> OR 
+			<select name="position_dropdown">
+			<?php
+
+				while($info = mysql_fetch_array( $query_data2 )) 
+				{
+						Print "<option value = \"{$info['Position_Name']}\">{$info['Position_Name']}</option>";
+				}
+
+			?>
+			</select>
 		</td>
 		<td>
 			<select name="champ_dropdown">
@@ -55,16 +66,13 @@
 
  <br>
 
-Champion Difficulty <br>
-<input type="number" name="difficulty" min="1" max="10" value="5"> <br> <br>
+Primary role?<br>
+Note: 1 for yes, 0 for no <br>
+<input type="number" name="isPrimary" min="0" max="1" value="0"> <br> <br>
 
-Champion Win Rate (As real number range:0-100) <br>
-Note: invalid numbers will be set to 0 in the DB <br>
-<input type="text" name="win_rate"> <br> <br>
-
-<input type="submit" name="modify" value="Add champion"> <br>
-<input type="submit" name="modify" value="Delete champion"> <br>
-<input type="submit" name="modify" value="Modify champion stats"> <br>
+<input type="submit" name="modify" value="Add position"> <br>
+<input type="submit" name="modify" value="Delete position"> <br>
+<input type="submit" name="modify" value="Modify position"> <br>
 </form>
 
 
