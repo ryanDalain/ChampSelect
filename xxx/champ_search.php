@@ -39,13 +39,11 @@
 
 	$queryOriginal = " SELECT DISTINCT Name, Position_Name";
 
-	// If the difficulty checkbox is selected, include "Difficulty" into the SELECT clause
-
 	if(IsChecked('check_list', 'Difficulty'))
 	{
 		$queryOriginal = $queryOriginal . ", Difficulty";
 	}
-
+	
 	if(IsChecked('check_list', 'WWW'))
 	{
 		$queryOriginal = $queryOriginal . ', Champ2 AS Works_With';

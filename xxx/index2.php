@@ -19,12 +19,9 @@
 	
 	while($info = mysql_fetch_array( $query_data )) 
 		$champlist[] = $info['Name'];
-		
-	//foreach($champlist as $name)
-		//echo $name . "<br>";
 ?>
 
-<form action="whatever.php" method="post" target="resultsFrame">
+<form action="champ_search2.php" method="post" target="resultsFrame">
 <table border cellpadding="1">
 	<tr>
 		<td>
@@ -45,23 +42,27 @@
 	</tr>
 	<tr>
 		<td>
-		<input type="checkbox" name="check_list[]" value="CC"> Assassin<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Fighter<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Mage<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Marksman<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Support<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Tank<br>
+		<input type="checkbox" name="check_list[]" value="Assassin"> Assassin<br>
+		<input type="checkbox" name="check_list[]" value="Fighter"> Fighter<br>
+		<input type="checkbox" name="check_list[]" value="Mage"> Mage<br>
+		<input type="checkbox" name="check_list[]" value="Marksman"> Marksman<br>
+		<input type="checkbox" name="check_list[]" value="Role_Support"> Support<br>
+		<input type="checkbox" name="check_list[]" value="Tank"> Tank<br>
+		<br>
+		<input type="checkbox" name="check_list[]" value="Role_Secondary">Include<br>Secondary<br>
 		</td>
 		<td>
-		<input type="checkbox" name="check_list[]" value="CC"> Top<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Middle<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Jungle<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Carry<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Support<br>
+		<input type="checkbox" name="check_list[]" value="Top"> Top<br>
+		<input type="checkbox" name="check_list[]" value="Middle"> Middle<br>
+		<input type="checkbox" name="check_list[]" value="Jungle"> Jungle<br>
+		<input type="checkbox" name="check_list[]" value="Carry"> Carry<br>
+		<input type="checkbox" name="check_list[]" value="Position_Support"> Support<br>
+		<br>
+		<input type="checkbox" name="check_list[]" value="Position_Secondary">Include<br>Secondary<br>
 		</td>
 		<td>
-		<input type="checkbox" name="check_list[]" value="CC"> Hard<br>
-		<input type="checkbox" name="check_list[]" value="CC"> Soft<br>
+		<input type="checkbox" name="check_list[]" value="Hard"> Hard<br>
+		<input type="checkbox" name="check_list[]" value="Soft"> Soft<br>
 		</td>
 		<td>
 			select up to 3 <br>
@@ -74,7 +75,7 @@
 
 				?>
 			</select> <br>
-			<select name="champ_dropdown_1">
+			<select name="champ_dropdown_2">
 				<option value="Default">Select Champ</option>
 				<?php
 
@@ -83,7 +84,7 @@
 
 				?>
 			</select> <br>
-			<select name="champ_dropdown_1">
+			<select name="champ_dropdown_3">
 				<option value="Default">Select Champ</option>
 				<?php
 
@@ -95,9 +96,9 @@
 		</td>
 		<td>
 			Between <br>
-			<input type="number" name="difficulty" min="1" max="10" value="1"> <br>	
+			<input type="number" name="min_difficulty" min="1" max="10" value="1"> <br>	
 			AND <br>
-			<input type="number" name="difficulty" min="1" max="10" value="10"> <br>
+			<input type="number" name="max_difficulty" min="1" max="10" value="10"> <br>
 		</td>
 	</tr>
 </table>
